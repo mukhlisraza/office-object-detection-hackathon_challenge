@@ -1,0 +1,3 @@
+*.pt
+src/wandb/
+src/office-objects-detections/

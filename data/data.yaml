@@ -1,0 +1,15 @@
+path: D:\CODES\office-object-detection-hackathon_challenge\data
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 6
+names: ['chair', 'keyboard', 'laptop', 'monitor', 'person', 'phone']
+
+roboflow:
+  workspace: office-objects-detection
+  project: office-objects-challenge-vqyxd
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/office-objects-detection/office-objects-challenge-vqyxd/dataset/5
