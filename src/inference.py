@@ -2,7 +2,7 @@ import torch
 from ultralytics import YOLO
 
 # Load  best-trained model
-model = YOLO('path/to/your/best_model.pt')  # Update this path to your model
+model = YOLO('path/to/your/model.pt')  # Update this path to your model
 
 # path to testing images
 test_dir = r'path/to/your/test/images'  # Update this path to your test images directory

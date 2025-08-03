@@ -1,3 +1,6 @@
 *.pt
+# Except .pt files inside the model folder
+!src/model/*.pt
+
 src/wandb/
 src/office-objects-detections/

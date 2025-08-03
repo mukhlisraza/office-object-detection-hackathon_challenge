@@ -15,7 +15,7 @@ The Smart Office Object Detection project aims to automate the identification of
 - Phone
 
 ### Models Used
-- **YOLOv8 Variants**: The training process explored multiple YOLOv8 models (`yolov8n`, `yolov8s`, `yolov8m`, `yolov8l`, `yolov8x`) to find the best fit. The final model used is `yolov8x`, selected for its superior performance after hyperparameter tuning.
+- **YOLOv8 Variants**: The training process explored multiple YOLOv8 models (`yolov8n`, `yolov8s`, `yolov8m`, `yolov8l`, `yolov8x`) to find the best fit. The final model used is `yolov8l`, selected for its superior performance after hyperparameter tuning, details (`src/model`).
 
 ## Setup Instructions
 
@@ -28,8 +28,8 @@ The Smart Office Object Detection project aims to automate the identification of
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/smart-office-detection.git
-   cd smart-office-detection
+   git clone https://github.com/your-username/office-object-detection-hackathon_challenge.git
+   cd office-object-detection-hackathon_challenge
    ```
 
 2. **Create a Virtual Environment** (recommended)
@@ -62,12 +62,15 @@ The Smart Office Object Detection project aims to automate the identification of
      ├── valid/
      │   ├── images/
      │   └── labels/
+     ├── testing/
+     │   ├── images/
+     │   └── labels/
      └── data.yaml
      ```
    - Update `data/data.yaml` with the paths to your image directories and the list of classes (Person, Chair, Monitor, Keyboard, Laptop, Phone).
 
 6. **Update Model Path**
-   - In `app.py`, ensure the `model_path = '../model/best_model.pt'` points to the location of your trained model (e.g., `office-objects-detections/yolos11/weights/best.pt` after training).
+   - In `app.py`, ensure the `model_path = '../model/best_model.pt'` points to the location of your trained model (e.g., `src/model/best_model.pt` after training).
    - In `training.ipynb` and `inference.py`, update the model path to match your trained model location.
 
 ## Running the Project
@@ -83,7 +86,7 @@ The training process uses a Jupyter Notebook with hyperparameter sweeps managed 
 - **Execute the Cells**
   - Run the cells sequentially to set up the environment, configure the sweep, and initiate training.
   - The sweep ID will be generated, and you can monitor progress on the W&B dashboard.
-  - The best model weights will be saved in `office-objects-detections/yolos-updated-dataset-trail2/weights/best.pt` (or similar, depending on the run).
+  - The best model weights will be saved in `src/model/best_model.pt` (or similar, depending on the run).
 
 - **Notes**
   - Training requires a GPU for optimal performance. Ensure CUDA is set up if using `device='cuda'`.
