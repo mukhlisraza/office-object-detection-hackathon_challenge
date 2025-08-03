@@ -82,7 +82,7 @@ The training process uses a Jupyter Notebook with hyperparameter sweeps managed 
 
 - **Execute the Cells**
   - Run the cells sequentially to set up the environment, configure the sweep, and initiate training.
-  - The sweep ID (`rakeqzh8`) will be generated, and you can monitor progress on the W&B dashboard (e.g., [Sweep URL](https://wandb.ai/mrlabs/smart-office/sweeps/rakeqzh8)).
+  - The sweep ID will be generated, and you can monitor progress on the W&B dashboard.
   - The best model weights will be saved in `office-objects-detections/yolos-updated-dataset-trail2/weights/best.pt` (or similar, depending on the run).
 
 - **Notes**
@@ -126,29 +126,20 @@ smart-office-detection/
 ├── data/              # Dataset (train, valid, data.yaml)
 ├── src/
 │   ├── dashboard/     # Streamlit app files
+|   |   ├── temp/              # Temporary files for uploads
 │   │   ├── app.py
 │   ├── training.ipynb # Training notebook
 │   ├── inference.py   # Inference script
 ├── model/             # Trained model weights (e.g., best_model.pt)
-├── temp/              # Temporary files for uploads
 ├── requirements.txt   # Dependencies
 └── README.md          # This file
 ```
-
-## Troubleshooting
-- **PermissionError**: If you encounter a `[WinError 32]` error, ensure no process is locking the temporary files. The script includes a retry mechanism, but you can manually delete `temp` files if needed.
-- **Model Not Found**: Verify the model path in each script matches the trained model location.
-- **Performance Issues**: Use a GPU and adjust `batch_size` or `time.sleep` in `app.py` for smoother video processing.
-
-## Contributing
-Feel free to fork this repository, submit issues, or pull requests to improve the project. Contributions to enhance model accuracy, UI, or support for additional media types are welcome!
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
-- Ultralytics for the YOLOv8 framework.
-- Weights & Biases for hyperparameter tuning and visualization.
-- Streamlit for the interactive dashboard.
-
-*Last updated: 06:50 PM KST, August 03, 2025*
+- Special thanks to the hackathon challenge organized by HumbleBeeAI (https://humblebee.ai/), which inspired and supported the development of this project.
+- Ultralytics for the YOLOv8 framework (https://www.ultralytics.com/).
+- Weights & Biases for hyperparameter tuning and visualization (https://wandb.ai/site/).
+- Streamlit for the interactive dashboard (https://streamlit.io/).
